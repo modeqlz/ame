@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Страница авторизации -->
+    <div id="auth-page" class="page active">
+        <div class="auth-container">
+            <div class="logo">
+                <div class="telegram-icon">📱</div>
+                <h1>Добро пожаловать</h1>
+                <p>Войдите через Telegram для продолжения</p>
+            </div>
+            
+            <div class="auth-methods">
+                <!-- Telegram Login Widget -->
+                <div id="telegram-login-widget"></div>
+                
+                <!-- Альтернативная кнопка для Web App -->
+                <button id="webapp-login" class="login-btn">
+                    <span class="telegram-logo">✈️</span>
+                    Войти через Telegram
+                </button>
+            </div>
+            
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Загрузка...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главная страница -->
+    <div id="main-page" class="page">
+        <header class="header">
+            <div class="user-info">
+                <img id="user-photo" class="user-avatar" src="" alt="Avatar">
+                <div class="user-details">
+                    <h2 id="user-name">Имя пользователя</h2>
+                    <p id="user-username">@username</p>
+                </div>
+            </div>
+            <button id="logout-btn" class="logout-btn">Выйти</button>
+        </header>
+
+        <main class="main-content">
+            <div class="welcome-section">
+                <h3>Добро пожаловать в приложение!</h3>
+                <p>Ваши данные синхронизированы с Telegram</p>
+            </div>
+
+            <div class="user-data-section">
+                <h4>Информация о пользователе</h4>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="label">ID:</span>
+                        <span id="user-id" class="value">-</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Имя:</span>
+                        <span id="user-first-name" class="value">-</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Фамилия:</span>
+                        <span id="user-last-name" class="value">-</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Username:</span>
+                        <span id="user-username-detail" class="value">-</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Язык:</span>
+                        <span id="user-language" class="value">-</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Премиум:</span>
+                        <span id="user-premium" class="value">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-features">
+                <h4>Возможности приложения</h4>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">👤</div>
+                        <h5>Профиль</h5>
+                        <p>Управление профилем</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h5>Настройки</h5>
+                        <p>Персонализация</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h5>Статистика</h5>
+                        <p>Ваша активность</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
